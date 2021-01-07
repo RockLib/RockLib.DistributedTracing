@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <PackageId>RockLib.Http</PackageId>
-    <PackageVersion>1.0.0-alpha01</PackageVersion>
+    <PackageVersion>1.0.0-alpha03</PackageVersion>
     <Authors>RockLib</Authors>
     <Description>Extension methods for HttpContext.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
