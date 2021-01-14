@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\RockLib.Http.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\RockLib.DistributedTracing.AspNetCore.xml</DocumentationFile>
     <RootNamespace>RockLib.DistributedTracing</RootNamespace>
   </PropertyGroup>
   
