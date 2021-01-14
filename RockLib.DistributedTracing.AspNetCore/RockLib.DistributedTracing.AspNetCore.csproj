@@ -6,7 +6,7 @@
 
   <PropertyGroup>
     <PackageId>RockLib.DistributedTracing.AspNetCore</PackageId>
-    <PackageVersion>1.0.0-alpha00</PackageVersion>
+    <PackageVersion>1.0.0-alpha01</PackageVersion>
     <Authors>RockLib</Authors>
     <Description>A library that defines standard mechanisms for distributed tracing.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
