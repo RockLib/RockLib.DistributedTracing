@@ -12,7 +12,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RockLib.Http.Tests
+namespace RockLib.DistributedTracing.AspNetCore.Tests
 {
     public class HttpContextExtensionTests
     {

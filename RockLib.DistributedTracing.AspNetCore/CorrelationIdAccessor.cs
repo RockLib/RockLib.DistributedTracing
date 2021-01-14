@@ -1,4 +1,4 @@
-﻿namespace RockLib.Http
+﻿namespace RockLib.DistributedTracing
 {
     /// <summary>
     /// The default implementation of <see cref="ICorrelationIdAccessor"/> with a simple get and set property.

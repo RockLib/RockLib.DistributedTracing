@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RockLib.Http;
+using RockLib.DistributedTracing.AspNetCore;
 
 namespace Middleware.netcoreapp3._1
 {

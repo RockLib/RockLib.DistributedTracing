@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 
-namespace RockLib.Http
+namespace RockLib.DistributedTracing.AspNetCore
 {
     /// <summary>
     /// A middleware used to set the correlation id in the response header. The id will either be found

@@ -1,4 +1,4 @@
-﻿namespace RockLib.Http
+﻿namespace RockLib.DistributedTracing.AspNetCore
 {
     /// <summary>
     /// Defines the options for the <see cref="CorrelationIdMiddleware"/> class.

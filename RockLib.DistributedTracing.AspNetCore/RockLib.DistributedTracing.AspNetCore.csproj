@@ -5,23 +5,24 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>RockLib.Http</PackageId>
-    <PackageVersion>1.0.0-alpha03</PackageVersion>
+    <PackageId>RockLib.DistributedTracing.AspNetCore</PackageId>
+    <PackageVersion>1.0.0-alpha00</PackageVersion>
     <Authors>RockLib</Authors>
-    <Description>Extension methods for HttpContext.</Description>
+    <Description>A library that defines standard mechanisms for distributed tracing.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageProjectUrl>https://github.com/RockLib/RockLib.Http</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/RockLib/RockLib.DistributedTracing</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageIcon>icon.png</PackageIcon>
     <Copyright>Copyright 2020 (c) Quicken Loans Corporation. All rights reserved.</Copyright>
-    <PackageTags>RockLib Http HttpContext</PackageTags>
+    <PackageTags>RockLib Distributed-Tracing AspNetCore</PackageTags>
     <Version>1.0.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\RockLib.Http.xml</DocumentationFile>
+    <RootNamespace>RockLib.DistributedTracing</RootNamespace>
   </PropertyGroup>
   
   <ItemGroup>

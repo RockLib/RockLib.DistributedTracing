@@ -7,7 +7,7 @@ using System;
 using System.Net;
 using static Microsoft.Net.Http.Headers.HeaderNames;
 
-namespace RockLib.Http
+namespace RockLib.DistributedTracing.AspNetCore
 {
     using static HeaderNames;
 

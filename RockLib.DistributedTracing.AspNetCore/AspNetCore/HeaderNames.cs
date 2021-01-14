@@ -1,4 +1,4 @@
-﻿namespace RockLib.Http
+﻿namespace RockLib.DistributedTracing.AspNetCore
 {
     /// <summary>
     /// A class for http header names.

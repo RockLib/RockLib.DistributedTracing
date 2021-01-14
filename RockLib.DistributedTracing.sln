@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.Http", "RockLib.Http\RockLib.Http.csproj", "{960AD5F2-550C-419A-8678-2B7109C9A8D3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.Http.Tests", "RockLib.Http.Tests\RockLib.Http.Tests.csproj", "{994CD054-0D99-44ED-81CB-00A82DD05D02}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{25EDE8BF-0FD5-41CB-90A1-76FA24931E76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Middleware.netcoreapp3.1", "Examples\Middleware.netcoreapp3.1\Middleware.netcoreapp3.1.csproj", "{57E5B917-6D99-4CF0-8A29-6F1753B81EA8}"
@@ -17,24 +13,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C234D9B1-8
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore", "RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj", "{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore.Tests", "RockLib.DistributedTracing.AspNetCore.Tests\RockLib.DistributedTracing.AspNetCore.Tests.csproj", "{262F441E-2CB3-4BCE-9190-740F54E3556A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{960AD5F2-550C-419A-8678-2B7109C9A8D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{960AD5F2-550C-419A-8678-2B7109C9A8D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{960AD5F2-550C-419A-8678-2B7109C9A8D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{960AD5F2-550C-419A-8678-2B7109C9A8D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{994CD054-0D99-44ED-81CB-00A82DD05D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{994CD054-0D99-44ED-81CB-00A82DD05D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{994CD054-0D99-44ED-81CB-00A82DD05D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{994CD054-0D99-44ED-81CB-00A82DD05D02}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57E5B917-6D99-4CF0-8A29-6F1753B81EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57E5B917-6D99-4CF0-8A29-6F1753B81EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57E5B917-6D99-4CF0-8A29-6F1753B81EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57E5B917-6D99-4CF0-8A29-6F1753B81EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262F441E-2CB3-4BCE-9190-740F54E3556A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262F441E-2CB3-4BCE-9190-740F54E3556A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262F441E-2CB3-4BCE-9190-740F54E3556A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262F441E-2CB3-4BCE-9190-740F54E3556A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

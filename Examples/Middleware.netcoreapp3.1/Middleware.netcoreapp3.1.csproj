@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\RockLib.Http\RockLib.Http.csproj" />
+    <ProjectReference Include="..\..\RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj" />
   </ItemGroup>
 
 

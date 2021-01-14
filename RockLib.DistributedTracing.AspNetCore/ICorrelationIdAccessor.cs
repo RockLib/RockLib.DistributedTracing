@@ -1,4 +1,4 @@
-﻿namespace RockLib.Http
+﻿namespace RockLib.DistributedTracing
 {
     /// <summary>
     /// Defines an object that used to retreive the correlation id.

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace RockLib.Http
+namespace RockLib.DistributedTracing.AspNetCore
 {
     /// <summary>
     /// Provides extension methods for the <see cref="CorrelationIdMiddleware"/> class.
