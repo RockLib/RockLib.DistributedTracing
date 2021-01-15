@@ -29,7 +29,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
             contextMock.Object.GetCorrelationId().Should().BeEquivalentTo(correlationId);
         }
 
-        [Fact(DisplayName = "setCorrelationId sets the correlation id")]
+        [Fact(DisplayName = "SetCorrelationId sets the correlation id")]
         public void SetCorrelationId()
         {
             var correlationId = new StringValues("CorrelationId1");

@@ -8,7 +8,7 @@
     <PackageId>RockLib.DistributedTracing.AspNetCore</PackageId>
     <PackageVersion>1.0.0-alpha02</PackageVersion>
     <Authors>RockLib</Authors>
-    <Description>A library that defines standard mechanisms for distributed tracing.</Description>
+    <Description>Defines standard interfaces for distributed tracing and extension methods for HttpContext to access them.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/RockLib/RockLib.DistributedTracing</PackageProjectUrl>
