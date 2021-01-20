@@ -51,11 +51,9 @@ namespace RockLib.DistributedTracing.AspNetCore
                 if (httpContext.GetHeaderValue(correlationIdHeader) is StringValues correlationId && correlationId.Count > 0)
                     accessor.CorrelationId = correlationId;
 
-                // lean on OpenTelemetry for the traceId
+                // lean on OpenTelemetry for an existing traceId
                 if (accessor.CorrelationId is null)
-                {
                     accessor.CorrelationId = Tracer.CurrentSpan?.Context.TraceId.ToString();
-                }
 
                 // fallback to creating a new value
                 if (accessor.CorrelationId is null)
