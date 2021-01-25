@@ -32,8 +32,20 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
     <PackageReference Include="OpenTelemetry" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Api" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.0.0-rc1.1" />
+    <!--<PackageReference Include="OpenTelemetry.Exporter.Prometheus" Version="1.0.0-rc1.1" />-->
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AspNetCore\Extrensions\" />
   </ItemGroup>
 
 </Project>
