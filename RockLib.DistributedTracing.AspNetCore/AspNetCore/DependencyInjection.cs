@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OpenTelemetry;
@@ -22,7 +21,7 @@ namespace RockLib.DistributedTracing.AspNetCore
         /// <param name="configuration"></param>
         public static void AddOpenTelemetry(this IServiceCollection services, IConfiguration configuration)
         {
-            var config = configuration.GetSection(nameof(TracerConfig)).Get<TracerConfig>();
+            var config = configuration.GetSection("RockLib.DistributedTracing").Get<TracerConfig>();
 
             switch (config.Exporter?.Trim().ToLower())
             {
