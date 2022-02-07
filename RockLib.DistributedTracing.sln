@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29926.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{25EDE8BF-0FD5-41CB-90A1-76FA24931E76}"
 EndProject
@@ -17,6 +17,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore", "RockLib.DistributedTracing.AspNetCore\RockLib.DistributedTracing.AspNetCore.csproj", "{521295BE-E2F5-46A3-AB2F-7C8A904EB43C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockLib.DistributedTracing.AspNetCore.Tests", "RockLib.DistributedTracing.AspNetCore.Tests\RockLib.DistributedTracing.AspNetCore.Tests.csproj", "{262F441E-2CB3-4BCE-9190-740F54E3556A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9131D2E4-5C50-4753-956E-9E1FEAE366C3}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		CODE_OF_CONDUCT.md = CODE_OF_CONDUCT.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		Directory.Build.props = Directory.Build.props
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

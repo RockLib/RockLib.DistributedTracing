@@ -8,6 +8,6 @@
         /// <summary>
         /// Gets the correlation id.
         /// </summary>
-        string CorrelationId { get; set; }
+        string? CorrelationId { get; set; }
     }
 }
