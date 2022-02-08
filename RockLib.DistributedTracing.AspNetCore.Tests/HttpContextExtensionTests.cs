@@ -101,9 +101,9 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
         [Fact(DisplayName = "GetCorrelationIdAccessor throws on null context")]
         public void GetCorrelationIdAccessorSadPath()
         {
-            HttpContext context = null;
+            HttpContext context = null!;
 
-            Action action = () => context.GetCorrelationIdAccessor();
+            Action action = () => context!.GetCorrelationIdAccessor();
 
             action.Should().Throw<ArgumentNullException>();
         }
