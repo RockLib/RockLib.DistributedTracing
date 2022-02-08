@@ -1,6 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Authors>RockLib</Authors>
 		<Copyright>Copyright 2022 (c) Rocket Mortgage. All rights reserved.</Copyright>
 		<DebugType>Embedded</DebugType>
 		<Description>Defines standard interfaces for distributed tracing and extension methods for HttpContext to access them.</Description>
