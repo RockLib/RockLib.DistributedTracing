@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Middleware.netcoreapp3._1.Controllers
+namespace Middleware.netcoreapp31.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
-    {
-        private static readonly string[] Summaries = new[]
-        {
+   [ApiController]
+   [Route("[controller]")]
+   public class WeatherForecastController : ControllerBase
+   {
+      private static readonly string[] Summaries = new[]
+      {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+      private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
+      public WeatherForecastController(ILogger<WeatherForecastController> logger)
+      {
+         _logger = logger;
+      }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
-        }
-    }
+      [HttpGet]
+      public IEnumerable<WeatherForecast> Get()
+      {
+         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+         {
+            Date = DateTime.Now.AddDays(index),
+            TemperatureC = RandomNumberGenerator.GetInt32(-20, 55),
+            Summary = Summaries[RandomNumberGenerator.GetInt32(Summaries.Length)]
+         }).ToArray();
+      }
+   }
 }

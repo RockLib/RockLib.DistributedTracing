@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Middleware.netcoreapp3._1
+namespace Middleware.netcoreapp31
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {

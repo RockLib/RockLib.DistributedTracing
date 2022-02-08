@@ -1,6 +1,6 @@
 using System;
 
-namespace Middleware.netcoreapp3._1
+namespace Middleware.netcoreapp31
 {
     public class WeatherForecast
     {
@@ -10,6 +10,6 @@ namespace Middleware.netcoreapp3._1
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string Summary { get; set; }
+        public string? Summary { get; set; }
     }
 }

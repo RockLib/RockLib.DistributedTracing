@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RockLib.DistributedTracing.AspNetCore;
 
-namespace Middleware.netcoreapp3._1
+namespace Middleware.netcoreapp31
 {
     public class Startup
     {
@@ -22,7 +22,7 @@ namespace Middleware.netcoreapp3._1
             services.AddControllers();
 
             // Use this to change the name of the correlation id header
-            //services.Configure<CorrelationIdMiddlewareOptions>(options => options.HeaderName = "Custom-Id-Header");
+            services.Configure<CorrelationIdMiddlewareOptions>(options => options.HeaderName = "Custom-Id-Header");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
