@@ -26,7 +26,7 @@ namespace RockLib.DistributedTracing.AspNetCore
             switch (config.Exporter?.Trim().ToLower())
             {
                 case "jaeger":
-                    services.AddOpenTelemetryTracing((builder) => builder
+                    /*services.AddOpenTelemetryTracing((builder) => builder
                         .SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(config.ServiceName))
                         .AddAspNetCoreInstrumentation()
                         .AddHttpClientInstrumentation()
@@ -36,7 +36,7 @@ namespace RockLib.DistributedTracing.AspNetCore
                             string host = hostPort[0];
                             string port = hostPort.Length > 1 ? hostPort[1] : "6831"; // default from https://www.jaegertracing.io/docs/1.21/deployment/
                             jaegerOptions.AgentHost = host;
-                            jaegerOptions.AgentPort = Convert.ToInt32(port);
+                            jaegerOptions.AgentPort = Convert.ToUInt32(port);
                             jaegerOptions.MaxPayloadSizeInBytes = 65000; // need to set this for Jaeger v1.21 to workaround a known issue
                             jaegerOptions.ProcessTags = new List<KeyValuePair<string, object>>()
                             {
@@ -45,7 +45,7 @@ namespace RockLib.DistributedTracing.AspNetCore
                                 new KeyValuePair<string, object>("Environment", config.Environment),
                             };
                         }));
-                    break;
+                    break;*/
                 case "zipkin":
                 //    services.AddOpenTelemetryTracing((builder) => builder
                 //        .AddAspNetCoreInstrumentation()

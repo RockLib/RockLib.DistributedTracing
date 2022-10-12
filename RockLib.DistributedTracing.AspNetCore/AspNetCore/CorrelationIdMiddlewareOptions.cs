@@ -8,6 +8,6 @@
         /// <summary>
         /// Gets or sets the name for the correlation id header.
         /// </summary>
-        public string HeaderName { get; set; }
+        public string? HeaderName { get; set; }
     }
 }
