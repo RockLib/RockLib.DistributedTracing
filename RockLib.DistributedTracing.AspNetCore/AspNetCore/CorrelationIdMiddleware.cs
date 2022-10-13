@@ -36,7 +36,6 @@ namespace RockLib.DistributedTracing.AspNetCore
       /// Sets the correlation id header to the response, if missing.
       /// </summary>
       /// <param name="context">The HttpContext.</param>
-#pragma warning disable CS0618 // only the ref to GetCorrelationId is obsolete here...
       public async Task InvokeAsync(HttpContext context)
       {
          var correlationId = context.GetCorrelationId(HeaderName);
@@ -50,6 +49,5 @@ namespace RockLib.DistributedTracing.AspNetCore
 
          await _next(context).ConfigureAwait(false);
       }
-#pragma warning restore CS0618 // Type or member is obsolete
    }
 }

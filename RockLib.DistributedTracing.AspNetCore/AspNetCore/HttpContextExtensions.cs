@@ -21,7 +21,6 @@ namespace RockLib.DistributedTracing.AspNetCore
       /// <param name="httpContext">The http context.</param>
       /// <returns>The correlation id.</returns>
       /// <param name="correlationIdHeader">The name of the correlation id header.</param>
-      [System.Obsolete("Applications aligning to Dynatrace should use TraceId and SpanId instead of CorrelationId")]
       public static string? GetCorrelationId(this HttpContext? httpContext, string correlationIdHeader = CorrelationId) =>
          httpContext?.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId;
 
@@ -31,7 +30,6 @@ namespace RockLib.DistributedTracing.AspNetCore
       /// <param name="httpContext">The http context.</param>
       /// <param name="correlationId">The correlation id.</param>
       /// <param name="correlationIdHeader">The name of the correlation id header.</param>
-      [System.Obsolete("Applications aligning to Dynatrace should use TraceId and SpanId instead of CorrelationId")]
       public static void SetCorrelationId(this HttpContext httpContext, string correlationId, string correlationIdHeader = CorrelationId) =>
          httpContext.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId = correlationId;
 
@@ -61,7 +59,6 @@ namespace RockLib.DistributedTracing.AspNetCore
             accessor.TraceId = GetTraceId(httpContext);
             accessor.SpanId = GetSpanId(httpContext);
 
-#pragma warning disable CS0618 // Type or member is obsolete
             if (httpContext.GetHeaderValue(correlationIdHeader) is StringValues correlationId && correlationId.Count > 0)
             {
                accessor.CorrelationId = correlationId;
@@ -76,7 +73,6 @@ namespace RockLib.DistributedTracing.AspNetCore
             {
                accessor.CorrelationId = Guid.NewGuid().ToString();
             }
-#pragma warning restore CS0618 // Type or member is obsolete
 
             httpContext.Items[typeof(ICorrelationIdAccessor)] = accessor;
          }
