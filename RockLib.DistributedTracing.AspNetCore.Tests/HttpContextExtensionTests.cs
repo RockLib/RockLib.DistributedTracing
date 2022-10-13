@@ -12,6 +12,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
     public class HttpContextExtensionTests
     {
         [Fact(DisplayName = "GetCorrelationId returns Accessor.CorrelationId header value")]
+        [Obsolete("correlationId, generally speaking, is obsolite.  Replaced w/SpanId & TraceId from OpenTelemetry")]
         public void GetCorrelationId()
         {
             var correlationId = new StringValues("CorrelationId1");
@@ -30,6 +31,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
         }
 
         [Fact(DisplayName = "SetCorrelationId sets the correlation id")]
+        [Obsolete("correlationId, generally speaking, is obsolite.  Replaced w/SpanId & TraceId from OpenTelemetry")]
         public void SetCorrelationId()
         {
             var correlationId = new StringValues("CorrelationId1");
@@ -60,6 +62,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
         }
 
         [Fact(DisplayName = "GetCorrelationIdAccessor creates accessor with existing correlation id")]
+        [Obsolete("correlationId, generally speaking, is obsolite.  Replaced w/SpanId & TraceId from OpenTelemetry")]
         public void GetCorrelationIdAccessor2()
         {
             var correlationId = new StringValues("CorrelationId1");
@@ -81,6 +84,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
         }
 
         [Fact(DisplayName = "GetCorrelationIdAccessor creates accessor with new correlation id")]
+        [Obsolete("correlationId, generally speaking, is obsolite.  Replaced w/SpanId & TraceId from OpenTelemetry")]
         public void GetCorrelationIdAccessor3()
         {
             var items = new Dictionary<object, object>();
