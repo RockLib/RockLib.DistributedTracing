@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
+using OpenTelemetry.Trace;
 using System;
+using System.Text.RegularExpressions;
 
 namespace RockLib.DistributedTracing.AspNetCore
 {
@@ -11,6 +13,8 @@ namespace RockLib.DistributedTracing.AspNetCore
    /// </summary>
    public static class HttpContextExtensions
    {
+      private static readonly Regex BLANK_TRACE_REGEX = new("^0+$");
+
       /// <summary>
       /// Gets the correlation id from an <see cref="HttpContext"/>.
       /// </summary>
@@ -18,7 +22,7 @@ namespace RockLib.DistributedTracing.AspNetCore
       /// <returns>The correlation id.</returns>
       /// <param name="correlationIdHeader">The name of the correlation id header.</param>
       public static string? GetCorrelationId(this HttpContext? httpContext, string correlationIdHeader = CorrelationId) =>
-          httpContext?.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId;
+         httpContext?.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId;
 
       /// <summary>
       /// Sets the correlation id to an <see cref="HttpContext"/>.
@@ -27,7 +31,7 @@ namespace RockLib.DistributedTracing.AspNetCore
       /// <param name="correlationId">The correlation id.</param>
       /// <param name="correlationIdHeader">The name of the correlation id header.</param>
       public static void SetCorrelationId(this HttpContext httpContext, string correlationId, string correlationIdHeader = CorrelationId) =>
-          httpContext.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId = correlationId;
+         httpContext.GetCorrelationIdAccessor(correlationIdHeader).CorrelationId = correlationId;
 
       /// <summary>
       /// Gets the accessor used to retreive a correlation id from an <see cref="HttpContext"/>.
@@ -46,14 +50,23 @@ namespace RockLib.DistributedTracing.AspNetCore
             throw new ArgumentNullException(nameof(correlationIdHeader));
          }
 
-         if (!httpContext.Items.TryGetValue(typeof(ICorrelationIdAccessor), out var value)
-             || value is not ICorrelationIdAccessor accessor)
+         if (!httpContext.Items.TryGetValue(typeof(ICorrelationIdAccessor), out var value) 
+            || value is not ICorrelationIdAccessor accessor)
          {
             accessor = new CorrelationIdAccessor();
+
+            // align w/OpenTelemetry
+            accessor.TraceId = GetTraceId(httpContext);
+            accessor.SpanId = GetSpanId(httpContext);
 
             if (httpContext.GetHeaderValue(correlationIdHeader) is StringValues correlationId && correlationId.Count > 0)
             {
                accessor.CorrelationId = correlationId;
+            }
+
+            if (accessor.CorrelationId is null)
+            {
+               accessor.CorrelationId = httpContext.GetTraceId(); // favor Otel alignment
             }
 
             if (accessor.CorrelationId is null)
@@ -65,6 +78,28 @@ namespace RockLib.DistributedTracing.AspNetCore
          }
 
          return accessor;
+      }
+
+      /// <summary>
+      /// Exposes OpenTelemtry's TraceId to downstream Rocklib consumers
+      /// </summary>
+      /// <param name="httpContext"></param>
+      /// <returns></returns>
+      public static string? GetTraceId(this HttpContext httpContext)
+      {
+         var traceId = Tracer.CurrentSpan?.Context.TraceId.ToString();
+         return (traceId is not null && !BLANK_TRACE_REGEX.IsMatch(traceId)) ? traceId : null;
+      }
+
+      /// <summary>
+      /// Exposes OpenTelemtry's SpanId to downstream Rocklib consumers
+      /// </summary>
+      /// <param name="httpContext"></param>
+      /// <returns></returns>
+      public static string? GetSpanId(this HttpContext httpContext)
+      {
+         var spanId = Tracer.CurrentSpan?.Context.SpanId.ToString();
+         return (spanId is not null && !BLANK_TRACE_REGEX.IsMatch(spanId)) ? spanId : null;
       }
 
       private static StringValues GetHeaderValue(this HttpContext httpContext, string headerName) =>

@@ -9,5 +9,15 @@
         /// Gets the correlation id.
         /// </summary>
         string? CorrelationId { get; set; }
+
+        /// <summary>
+        /// Gets the Otel trace id.
+        /// </summary>
+        string? TraceId { get; set; }
+
+        /// <summary>
+        /// Gets the Otel span id.
+        /// </summary>
+        string? SpanId { get; set; }
     }
 }
