@@ -11,10 +11,10 @@
 		<PackageProjectUrl>https://github.com/RockLib/RockLib.DistributedTracing</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageReleaseNotes>A changelog is available at https://github.com/RockLib/RockLib.DistributedTracing/blob/main/RockLib.DistributedTracing.AspNetCore/CHANGELOG.md.</PackageReleaseNotes>
-		<PackageVersion>2.0.0</PackageVersion>
+		<PackageVersion>2.1.0-alpha.1</PackageVersion>
 		<PackageTags>RockLib Distributed-Tracing AspNetCore</PackageTags>
 		<PublishRepositoryUrl>True</PublishRepositoryUrl>
-		<Version>2.0.0</Version>
+		<Version>2.1.0-alpha.1</Version>
 	</PropertyGroup>
 	<PropertyGroup>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>
