@@ -35,7 +35,9 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)'!='net5.0'">
+		<None Remove="System.Text.Encodings.Web" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
 		<PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
 	</ItemGroup>
 </Project>
