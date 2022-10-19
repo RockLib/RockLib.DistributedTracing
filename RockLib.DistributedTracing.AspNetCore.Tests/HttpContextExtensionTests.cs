@@ -96,6 +96,8 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
             var accessor = contextMock.Object.GetCorrelationIdAccessor();
             accessor.Should().NotBeNull();
             accessor.CorrelationId.Should().NotBeNull();
+            accessor.TraceId.Should().BeNull();
+            accessor.SpanId.Should().BeNull();
         }
 
         [Fact(DisplayName = "GetCorrelationIdAccessor throws on null context")]
