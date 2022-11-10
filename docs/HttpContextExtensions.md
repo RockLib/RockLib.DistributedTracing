@@ -1,10 +1,15 @@
+---
+sidebar_position: 2
+sidebar_label: 'Access correlation id of an HttpContext'
+---
+
 # How to access the correlation id of an HttpContext
 
-### GetCorrelationIdAccessor
+## GetCorrelationIdAccessor
 
 Accessing the correlation id of an `HttpContext` is done with the `ICorrelationIdAccessor` returned by the `GetCorrelationIdAccessor` extension method, from the `RockLib.DistributedTracing.AspNetCore` namespace.
 
-```c#
+```csharp
 ICorrelationIdAccessor accessor = HttpContext.GetCorrelationIdAccessor();
 string correlationId = accessor.CorrelationId;
 ```
@@ -15,22 +20,22 @@ The first time the `GetCorrelationIdAccessor` extension method is called, an att
 
 A different header (besides `"X-Correlation-Id"`) can be specified by passing a value to the optional `correlationIdHeader` parameter:
 
-```c#
+```csharp
 ICorrelationIdAccessor accessor = HttpContext.GetCorrelationIdAccessor("MyCorrelationIdHeader");
 ```
 
-### GetCorrelationId
+## GetCorrelationId
 
 This extension method, which has the same optional `correlationIdHeader` parameter as the above `GetCorrelationIdAccessor` extension method, returns the value of the `CorrelationId` property of the `ICorrelationIdAccessor` returned by a call to `GetCorrelationIdAccessor`.
 
-```c#
+```csharp
 string correlationId = HttpContext.GetCorrelationId();
 ```
 
-### SetCorrelationId
+## SetCorrelationId
 
 This extension method is exactly like `GetCorrelationId`, except it sets the `CorrelationId` property of the `ICorrelationIdAccessor` instead of getting it.
 
-```c#
+```csharp
 HttpContext.SetCorrelationId("MyCorrelationId");
 ```
