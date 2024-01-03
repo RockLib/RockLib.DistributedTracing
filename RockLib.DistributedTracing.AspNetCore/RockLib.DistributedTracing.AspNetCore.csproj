@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Copyright>Copyright 2022 (c) Rocket Mortgage. All rights reserved.</Copyright>
+		<Copyright>Copyright 2024 (c) Rocket Mortgage. All rights reserved.</Copyright>
 		<DebugType>Embedded</DebugType>
 		<Description>Defines standard interfaces for distributed tracing and extension methods for HttpContext to access them.</Description>
 		<EmbedUntrackedSources>True</EmbedUntrackedSources>
@@ -11,10 +11,10 @@
 		<PackageProjectUrl>https://github.com/RockLib/RockLib.DistributedTracing</PackageProjectUrl>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageReleaseNotes>A changelog is available at https://github.com/RockLib/RockLib.DistributedTracing/blob/main/RockLib.DistributedTracing.AspNetCore/CHANGELOG.md.</PackageReleaseNotes>
-		<PackageVersion>2.1.0</PackageVersion>
+		<PackageVersion>3.0.0-alpha.1</PackageVersion>
 		<PackageTags>RockLib Distributed-Tracing AspNetCore</PackageTags>
 		<PublishRepositoryUrl>True</PublishRepositoryUrl>
-		<Version>2.1.0</Version>
+		<Version>3.0.0-alpha.1</Version>
 	</PropertyGroup>
 	<PropertyGroup>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(PackageId).xml</DocumentationFile>
@@ -28,16 +28,10 @@
 		<None Include="..\icon.png" Pack="true" PackagePath="" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="OpenTelemetry" Version="1.3.1" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)'=='net5.0'">
-		<FrameworkReference Include="Microsoft.AspNetCore.App" />
-	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)'!='net5.0'">
-		<None Remove="System.Text.Encodings.Web" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="System.Text.Encodings.Web" Version="4.5.1" />
-		<PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="8.0.0" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+		<PackageReference Include="OpenTelemetry" Version="1.7.0" />
+		<PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
 	</ItemGroup>
 </Project>

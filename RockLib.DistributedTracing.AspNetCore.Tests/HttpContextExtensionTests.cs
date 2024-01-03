@@ -43,7 +43,7 @@ namespace RockLib.DistributedTracing.AspNetCore.Tests
             contextMock.Setup(cm => cm.Request).Returns(requestMock.Object);
             contextMock.Setup(cm => cm.Items).Returns(items);
 
-            contextMock.Object.SetCorrelationId(correlationId);
+            contextMock.Object.SetCorrelationId(correlationId!);
             contextMock.Object.GetCorrelationId().Should().BeEquivalentTo(correlationId);
         }
 
