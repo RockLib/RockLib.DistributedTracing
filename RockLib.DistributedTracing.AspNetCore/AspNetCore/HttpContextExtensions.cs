@@ -41,7 +41,7 @@ namespace RockLib.DistributedTracing.AspNetCore
         /// <param name="correlationIdHeader">The name of the correlation id header.</param>
         public static ICorrelationIdAccessor GetCorrelationIdAccessor(this HttpContext httpContext, string correlationIdHeader = CorrelationId)
         {
-#if NET6_0_OR_GREATER
+#if NET8_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(httpContext);
             ArgumentNullException.ThrowIfNull(correlationIdHeader);
 #else
@@ -54,6 +54,7 @@ namespace RockLib.DistributedTracing.AspNetCore
                 throw new ArgumentNullException(nameof(correlationIdHeader));
             }
 #endif
+#pragma warning disable CA1859 // Use concrete types when possible for improved performance
             if (!httpContext.Items.TryGetValue(typeof(ICorrelationIdAccessor), out var value)
                || value is not ICorrelationIdAccessor accessor)
             {
@@ -80,6 +81,7 @@ namespace RockLib.DistributedTracing.AspNetCore
 
                 httpContext.Items[typeof(ICorrelationIdAccessor)] = accessor;
             }
+#pragma warning restore CA1859 // Use concrete types when possible for improved performance
 
             return accessor;
         }
